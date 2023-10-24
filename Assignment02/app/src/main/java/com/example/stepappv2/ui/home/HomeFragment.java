@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.stepappv2.MainActivity;
 import com.example.stepappv2.R;
 import com.example.stepappv2.databinding.FragmentHomeBinding;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
@@ -29,7 +31,7 @@ public class HomeFragment extends Fragment {
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         counter = 0;
-        goal = 50;
+        goal = 10;
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -44,9 +46,15 @@ public class HomeFragment extends Fragment {
         count.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (counter == goal){
+                    counter = 0;
+                }
                 counter++;
                 stepCountsView.setText(Integer.toString(counter));
                 progressBar.setProgress(counter);
+                if (counter == goal)
+                    Toast.makeText(getContext(), "Congratulations", Toast.LENGTH_SHORT).show();
+
             }
         });
         Button start = (Button) root.findViewById(R.id.start_button);

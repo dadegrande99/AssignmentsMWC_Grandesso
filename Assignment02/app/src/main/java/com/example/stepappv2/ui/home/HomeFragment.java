@@ -31,7 +31,7 @@ public class HomeFragment extends Fragment {
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         counter = 0;
-        goal = 50;
+        goal = 10;
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -46,15 +46,13 @@ public class HomeFragment extends Fragment {
         count.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (counter == goal){
-                    counter = 0;
-                }
                 counter++;
                 stepCountsView.setText(Integer.toString(counter));
-                progressBar.setProgress(counter);
-                if (counter == goal)
+                progressBar.setProgress(counter%goal);
+                if (counter%goal == 0) {
+                    progressBar.setProgress(goal);
                     Toast.makeText(getContext(), "Congratulations", Toast.LENGTH_SHORT).show();
-
+                }
             }
         });
         Button start = (Button) root.findViewById(R.id.start_button);

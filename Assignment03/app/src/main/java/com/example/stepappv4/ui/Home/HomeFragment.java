@@ -93,6 +93,17 @@ public class HomeFragment extends Fragment {
                         Toast.makeText(getContext(), R.string.acc_sensor_not_available, Toast.LENGTH_LONG).show();
                     }
 
+                    if (stepDetectorSensor != null)
+                    {
+                        sensorListener = new StepCounterListener(stepCountsView);
+                        sensorManager.registerListener(sensorListener, stepDetectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
+                        Toast.makeText(getContext(), R.string.start_text, Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getContext(), R.string.step_detector_sensor_not_available, Toast.LENGTH_LONG).show();
+                    }
+
                 }
                 else
                 {
@@ -116,6 +127,7 @@ class  StepCounterListener implements SensorEventListener{
 
     private long lastSensorUpdate = 0;
     public static int accStepCounter = 0;
+    public static int stepDetectorCounter = 0;
     ArrayList<Integer> accSeries = new ArrayList<Integer>();
     ArrayList<String> timestampsSeries = new ArrayList<String>();
     private double accMag = 0;
@@ -138,6 +150,12 @@ class  StepCounterListener implements SensorEventListener{
         this.database = databse;
         this.progressBar = progressBar;
     }
+
+    public StepCounterListener(TextView stepCountsView)
+    {
+        this.stepCountsView = stepCountsView;
+    }
+
 
 
     @Override
@@ -188,6 +206,11 @@ class  StepCounterListener implements SensorEventListener{
 
                 break;
 
+            case Sensor.TYPE_STEP_DETECTOR:
+                countSteps(sensorEvent.values[0]);
+
+                break;
+
         }
 
 
@@ -231,6 +254,14 @@ class  StepCounterListener implements SensorEventListener{
 
             }
         }
+    }
+
+    private void countSteps(float step)
+    {
+        stepDetectorCounter += step;
+
+        Log.d("STEP_DETECTOR STEPS: ", String.valueOf(stepDetectorCounter));
+
     }
 
 

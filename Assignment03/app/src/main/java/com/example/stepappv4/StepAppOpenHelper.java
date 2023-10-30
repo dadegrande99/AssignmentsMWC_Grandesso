@@ -98,7 +98,7 @@ public class StepAppOpenHelper extends SQLiteOpenHelper {
 
     public static Map<String, Integer> loadStepsByDay(Context context, String date){
         // 1. Define a map to store the hour and number of steps as key-value pairs
-        Map<String, Integer>  map = new HashMap<>();
+        Map<String, Integer>  map = new TreeMap<>();
 
         // 2. Get the readable database
         StepAppOpenHelper databaseHelper = new StepAppOpenHelper(context);
@@ -108,12 +108,12 @@ public class StepAppOpenHelper extends SQLiteOpenHelper {
         //Manage Monday & Sunday
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate data = LocalDate.parse(date, formatter);
-        DayOfWeek giornoSettimana = data.getDayOfWeek();
-        // Calcola la differenza di giorni tra il giorno della settimana attuale e Lunedì (DayOfWeek.MONDAY)
-        int differenzaGiorni = DayOfWeek.MONDAY.getValue() - giornoSettimana.getValue();
-        // Ottieni il Lunedì della settimana sottraendo la differenza di giorni dalla data
-        LocalDate monday = data.plusDays(differenzaGiorni);
-        // Ottieni la Domenica aggiungendo 6 giorni al Lunedì
+        DayOfWeek dayOfWeek = data.getDayOfWeek();
+        // Calculates the difference in days between the current day of the week and Monday (DayOfWeek.MONDAY)
+        int differenceDays = DayOfWeek.MONDAY.getValue() - dayOfWeek.getValue();
+        // Get the Monday of the week by subtracting the difference of days from the date
+        LocalDate monday = data.plusDays(differenceDays);
+        // Get Sunday by adding 6 days to Monday
         LocalDate sunday = monday.plusDays(6);
 
         // 3. Define the query to get the data
@@ -131,8 +131,6 @@ public class StepAppOpenHelper extends SQLiteOpenHelper {
             tmpKey = monday.plusDays(i).format(formatter);
             map.put(tmpKey, tmpValue);
         }
-
-
         // 4. Iterate over returned elements on the cursor
         cursor.moveToFirst();
 
@@ -144,6 +142,7 @@ public class StepAppOpenHelper extends SQLiteOpenHelper {
             map.put(tmpKey, tmpValue);
             cursor.moveToNext();
         }
+
 
         // 5. Close the cursor and database
         cursor.close();

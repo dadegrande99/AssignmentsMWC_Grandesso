@@ -14,6 +14,7 @@ The clear structure of the repository facilitates progress tracking, resource sh
     - [Assignment 01 - Hello World](#assignment-01---hello-world)
     - [Assignment 02 - Material Design](#assignment-02---material-design)
     - [Assignment 03 - Step Detector \& DB](#assignment-03---step-detector--db)
+    - [Assignment 04 - Analysis of Physiological Data](#assignment-04---analysis-of-physiological-data)
   - [Contributors](#contributors)
   - [License](#license)
 
@@ -51,6 +52,10 @@ Other implementation:
 - Data storage and visualization
 
 For more information look at the report: [MWC - Assignment03 - Davide Grandesso](MWC%20-%20Assignment03%20-%20Davide%20Grandesso.pdf)
+
+### Assignment 04 - Analysis of Physiological Data
+
+For more information look at the report: [Davide_Grandesso_Assignment04](Davide_Grandesso_Assignment04.pdf)
 
 ## Contributors
 

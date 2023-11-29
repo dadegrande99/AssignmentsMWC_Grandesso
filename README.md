@@ -20,13 +20,13 @@ The clear structure of the repository facilitates progress tracking, resource sh
 
 ## Assignments
 
-### Assignment 01 - Hello World
+### [Assignment 01 - Hello World](/Assignment01/)
 
 In this assignment I change the TextView of the tutorial exercise from "Hello World" to "DAVIDE GRANDESSO". Then I add two other TextView, in the first one I write “My favorite color is red” and I change the text color to red, in the last TextView I write “My favorite sport is football”.
 
 For more information look at the report: [MWC - Assignment01 - Davide Grandesso](MWC%20-%20Assignment01%20-%20Davide%20Grandesso.pdf)
 
-### Assignment 02 - Material Design
+### [Assignment 02 - Material Design](/Assignment02/)
 
 In this assignment I implemented a button labeled "Count" and I count how many times the user click this button, if the goal is reached then the app prints a "Congratulations" toast message
 
@@ -39,7 +39,7 @@ Other implementation:
 
 For more information look at the report: [MWC - Assignment02 - Davide Grandesso](MWC%20-%20Assignment02%20-%20Davide%20Grandesso.pdf)
 
-### Assignment 03 - Step Detector & DB
+### [Assignment 03 - Step Detector & DB](/Assignment03/)
 
 In this assignment the app can automatically detect steps and save them in a database.
 
@@ -53,7 +53,7 @@ Other implementation:
 
 For more information look at the report: [MWC - Assignment03 - Davide Grandesso](MWC%20-%20Assignment03%20-%20Davide%20Grandesso.pdf)
 
-### Assignment 04 - Analysis of Physiological Data
+### [Assignment 04 - Analysis of Physiological Data](/Assignment04/)
 
 In this assignment I worked on a Jupyter Notebook with starting point that of Tutorial 08 but using different data than in that tutorial, as the first work was done just a comparison on the balanced accuracy for the 5-fold and Leave One User Out cross validation
 

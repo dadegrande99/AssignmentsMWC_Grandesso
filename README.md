@@ -57,6 +57,8 @@ For more information look at the report: [MWC - Assignment03 - Davide Grandesso]
 
 In this assignment I worked on a Jupyter Notebook with starting point that of Tutorial 08 but using different data than in that tutorial, as the first work was done just a comparison on the balanced accuracy for the 5-fold and Leave One User Out cross validation
 
+In addition, more analysis has also been done using other machine learning models such as SVM, Random Forest, and Naive Bayes
+
 For more information look at the report: [MWC - Assignment04 - Davide Grandesso](MWC%20-%20Assignment04%20-%20Davide%20Grandesso.pdf)
 
 ## Contributors

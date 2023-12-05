@@ -1,6 +1,6 @@
 # Assignments Mobile and Wearable Computing - Davide Grandesso
 
-This repository serves as a collection of Android projects developed within the context of the "Mobile and Wearable Computing" course.
+This repository serves as a collection of Android projects developed within the context of the [*Mobile and Wearable Computing*][MWC] course at [USI](https://www.usi.ch).
 
 Each project is specifically designed to fulfill assigned tasks in the course curriculum. The organization of these projects within the repository enables efficient version control, accurate documentation, and seamless collaboration.
 
@@ -68,3 +68,5 @@ For more information look at the report: [MWC - Assignment04 - Davide Grandesso]
 ## License
 
 This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+
+[MWC]: https://search.usi.ch/it/corsi/35268083/mobile-and-wearable-computing
